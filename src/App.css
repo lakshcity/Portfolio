@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ====== GLOBAL THEME ====== */
+:root {
+  font-family: 'Georgia', serif;
+  background: #f5f1ea; /* light beige background */
+  color: #3f3f3f; /* dark charcoal */
+}
+
+/* === Header/NavBar === */
+nav, .fixed.top-0 {
+  backdrop-filter: blur(6px);
+  background-color: rgba(55, 48, 41, 0.85) !important; /* muted dark brown */
+  border-bottom: 1.5px solid #9c8a77;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  color: #f0e8dc;
+}
+
+/* === Portfolio Background === */
+.portfolio-bg {
+  min-height: 100vh;
+  background: #f5f1ea;
+}
+
+/* === Hero Section with classic textured/beige background === */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+  padding: 100px 20px 60px;
+  background-color: #3f3a35; /* dark grey/brown */
+  background-image: repeating-radial-gradient(circle at 0 0, #4a463f 0, #3f3a35 3px, transparent 5px, transparent 25px);
+  color: #e8dccb; /* warm beige */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 600px;
+  text-align: center;
+  padding: 0 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+/* Add subtle overlay texture or vignette if desired */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at center, rgba(255 255 255 / 0.15), transparent 80%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 9999px;
+  margin: 0 auto 28px;
+  box-shadow: 0 0 18px #a8907aaa;
+  border: 3px solid #fbeedb;
+  animation: profile-bounce 2.5s infinite alternate;
+}
+
+@keyframes profile-bounce {
+  0% { transform: scale(1);}
+  70% { transform: scale(1.05);}
+  100% { transform: scale(0.97);}
+}
+
+.gradient-name {
+  background: linear-gradient(90deg, #c9b89f, #a58d64, #705936);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  font-family: 'Georgia', serif;
+  letter-spacing: 2px;
+  font-size: 3.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.typed {
+  font-family: 'Courier New', monospace;
+  color: #bba78c;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* === CTA Buttons with classic colors === */
+.cta-buttons, .btn {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 20px 0 8px 0;
+}
+
+.btn {
+  border-radius: 0.75rem;
+  padding: 0.8em 2em;
+  box-shadow: none;
+  font-size: 1.025rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  font-family: 'Georgia', serif;
+}
+
+.btn-primary {
+  background: #a58d64;
+  color: #fbeedb;
+  border: none;
+  box-shadow: 0 4px 8px #70593688;
+}
+
+.btn-primary:hover {
+  background: #705936;
+  box-shadow: 0 6px 18px #4a3925bb;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #fbeedb;
+  color: #705936;
+  border: 2px solid #705936;
+}
+
+.btn-secondary:hover {
+  background: #e4d7bc;
+  color: #4a3925;
+  border-color: #4a3925;
+  transform: translateY(-2px);
+}
+
+/* === Section styling === */
+section {
+  margin: 70px 0;
+  padding: 2rem 20px;
+  background: #fdf9f2;
+  box-shadow: 0 3px 15px #ccbfa7aa;
+  border-radius: 1.25rem;
+  font-family: 'Georgia', serif;
+  color: #4a463f;
+}
+
+/* Section headers with warm tones */
+section h2 {
+  font-size: 2.9rem;
+  margin-bottom: 1.9rem;
+  letter-spacing: 1.5px;
+  font-weight: 900;
+  border-bottom: 5px solid #a58d64;
+  padding-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+  color: #705936;
+}
+
+/* Cards and chips with muted classic tones */
+.card, .project-card {
+  border-radius: 1.5rem;
+  background: #f7f3eb;
+  padding: 2rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 14px #c8bba9cc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px #9c8a77cc;
+  background: #f0eadb;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.5rem 1.3rem;
+  font-size: 0.95rem;
+  border-radius: 9999px;
+  background: #d8cfbd;
+  color: #5a5146;
+  font-weight: 700;
+  margin: 3px;
+  border: 1.5px solid #beaf87;
+  box-shadow: 0 1px 6px #a5937766;
+  transition: all 0.25s ease;
+}
+
+.chip:hover {
+  background: #beaf87;
+  color: #3d3625;
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 8px 20px #866d39bb;
+}
+
+/* More spacing between projects */
+#projects .project-card {
+  margin-bottom: 2rem;
+}
+
+/* Remove numbering (bullets) from achievements list */
+#achievements .achievements-list {
+  list-style: none;
+  padding-left: 0 !important;
+  border-left: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+#achievements .achievement-item {
+  padding-left: 0 !important;
+  max-width: 380px;
+  text-align: center;
+  position: relative;
+  font-family: 'Georgia', serif;
+  color: #4a463f;
+}
+
+/* Services list centered and spaced nicely */
+#about .services-list {
+  text-align: center;
+  padding-left: 0 !important;
+  margin: 0 auto;
+  display: inline-block;
+  max-width: 320px;
+  font-family: 'Georgia', serif;
+  color: #5a5146;
+}
+
+/* Footer with classic muted tone */
+footer {
+  padding: 3rem 1rem;
+  background: #9c8a77;
+  color: #fbeedb;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  section {
+    margin: 40px 0;
+    padding: 1rem 10px;
+  }
+  .hero-section {
+    padding: 60px 15px 40px;
+  }
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 20px;
+  }
+  section h2 {
+    font-size: 2rem;
+  }
+  #about .services-list {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 0;
+  }
+  section {
+    margin: 30px 0;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+}

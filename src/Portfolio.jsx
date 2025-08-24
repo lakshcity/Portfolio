@@ -38,7 +38,7 @@ const DATA = {
   location: "Jaipur, India",
   email: "mailto:ilakshgupta@gmail.com",
   github: "https://github.com/lakshcity",
-  resumeUrl: "https://drive.google.com/uc?export=download&id=1a4PRhy_LVzCy0Iv75KK03cs8YAH7xqCF",
+  resumeUrl: "https://drive.google.com/file/d/1Rqcvo368ncvoV4g_TtFMkFY6CCEygICJ/view?usp=sharing",
   roles: ["ML Engineer", "Frontend Developer", "Data Science Enthusiast"],
   skills: [
     "Python", "C++", "Java", "TensorFlow", "scikit-learn",
@@ -168,7 +168,7 @@ function Hero() {
         <p className="typed">{typed}</p>
         <div className="cta-buttons">
           <a href="#projects" className="btn btn-primary">View Projects</a>
-          <a href={DATA.resumeUrl} className="btn btn-secondary">Download Resume</a>
+          <a href={DATA.resumeUrl} className="btn btn-secondary">View Resume</a>
         </div>
         <div className="location">
           <MapPin className="inline-icon" /> {DATA.location}
